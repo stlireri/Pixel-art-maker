@@ -11,8 +11,6 @@ $(document).ready(function(){
     row = $('#inputWidth').val();
 
     column = $('#inputHeight').val();
-
-    color = $('#colorPicker').val();
     
     makeGrid(row, column);
   });
@@ -27,4 +25,13 @@ for(var x = 1; x <= height; x++){
     $('tr').filter(':last').append('<td></td>')
   };
 };
+
+$('td').click(function(){
+  color = $('#colorPicker').val();
+  if($(this).attr('style')){
+    $(this).removeAttr('style');
+  }else{
+    $(this).css('background-color',color);
+  }
+});
 }
